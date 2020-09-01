@@ -10,8 +10,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#define WIDTH 500
-#define HIGHT 500
+#define WIDTH 700
+#define HIGHT 300
 int main(){
     srand(time(NULL));
     uint8_t pixels[WIDTH * HIGHT * 3];
@@ -25,8 +25,8 @@ int main(){
     perlinSEED = (int) time(NULL);
     
 
-    for(int i = 0; i < WIDTH; i++){
-        for(int j = 0; j < HIGHT; j++){
+    for(int i = 0; i < HIGHT; i++){
+        for(int j = 0; j < WIDTH; j++){
             value = round(perlin(i, j, 0.01, 2, true) * 255);
             //value = round(value / 20) * 20; /* Try uncommenting this */
             pixels[index++] = value;
